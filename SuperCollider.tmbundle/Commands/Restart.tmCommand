@@ -5,8 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>require_cmd sc3ctrl
-sc3ctrl -k</string>
+	<string>require_cmd sc3c
+sc3c -k</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
@@ -15,6 +15,8 @@ sc3ctrl -k</string>
 	<string>Recompile class library</string>
 	<key>output</key>
 	<string>discard</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>uuid</key>
 	<string>0EE79AEB-E9A7-4ABE-98A0-6CDBF3F3777A</string>
 </dict>

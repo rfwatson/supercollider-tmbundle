@@ -6,6 +6,8 @@
 	<string>s.queryAllNodes</string>
 	<key>name</key>
 	<string>s.queryAllNodes</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>s.q</string>
 	<key>uuid</key>

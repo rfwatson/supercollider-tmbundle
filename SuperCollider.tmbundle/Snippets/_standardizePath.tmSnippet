@@ -6,6 +6,8 @@
 	<string>.standardizePath$0</string>
 	<key>name</key>
 	<string>.standardizePath</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>.sp</string>
 	<key>uuid</key>

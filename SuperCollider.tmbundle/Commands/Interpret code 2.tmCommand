@@ -5,10 +5,9 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby
-cmd = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_LINE']
-ENV['SC_INTERPRET_TEXT'] = cmd
-%x{sc3ctrl -x}</string>
+	<string>require_cmd sc3c
+export SC_INTERPRET_TEXT="${TM_SELECTED_TEXT:-$TM_CURRENT_LINE}"
+sc3c -x SC_INTERPRET_TEXT;</string>
 	<key>fallbackInput</key>
 	<string>line</string>
 	<key>input</key>
@@ -19,6 +18,8 @@ ENV['SC_INTERPRET_TEXT'] = cmd
 	<string>Interpret</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>uuid</key>
 	<string>FB64DE22-E1F3-48CC-AE67-21B7E008ADD5</string>
 </dict>

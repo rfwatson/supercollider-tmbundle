@@ -6,6 +6,8 @@
 	<string>.openHelpFile</string>
 	<key>name</key>
 	<string>.openHelpFile</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>.h</string>
 	<key>uuid</key>

@@ -6,6 +6,8 @@
 	<string>{ ${1:SinOsc.ar} }.play</string>
 	<key>name</key>
 	<string>play</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>play</string>
 	<key>uuid</key>

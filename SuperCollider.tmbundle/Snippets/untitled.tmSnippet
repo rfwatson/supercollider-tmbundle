@@ -6,6 +6,8 @@
 	<string>.postln</string>
 	<key>name</key>
 	<string>.postln</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>.p</string>
 	<key>uuid</key>

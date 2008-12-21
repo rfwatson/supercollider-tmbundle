@@ -5,8 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>require_cmd sc3ctrl
-sc3ctrl -j $TM_SELECTED_TEXT</string>
+	<string>require_cmd sc3c
+sc3c -j $TM_SELECTED_TEXT</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
@@ -15,6 +15,8 @@ sc3ctrl -j $TM_SELECTED_TEXT</string>
 	<string>Open Class file</string>
 	<key>output</key>
 	<string>discard</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>uuid</key>
 	<string>293C4F9B-E1A4-4D01-83E7-0698112C7FA4</string>
 </dict>

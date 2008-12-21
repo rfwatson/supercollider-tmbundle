@@ -6,6 +6,8 @@
 	<string>EnvGen.kr(${1:env}, doneAction: ${2:2})</string>
 	<key>name</key>
 	<string>EnvGen.kr</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>egen</string>
 	<key>uuid</key>

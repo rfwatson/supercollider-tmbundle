@@ -6,6 +6,8 @@
 	<string>asCompileString</string>
 	<key>name</key>
 	<string>asCompileString</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>ascs</string>
 	<key>uuid</key>

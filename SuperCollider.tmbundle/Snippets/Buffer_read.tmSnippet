@@ -6,6 +6,8 @@
 	<string>Buffer.read(${1:s}, "${2:sounds/Amen.wav}");</string>
 	<key>name</key>
 	<string>Buffer.read</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>buf</string>
 	<key>uuid</key>

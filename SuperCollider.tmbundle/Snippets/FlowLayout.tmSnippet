@@ -6,6 +6,8 @@
 	<string>w.view.decorator = FlowLayout(w.view.bounds);</string>
 	<key>name</key>
 	<string>FlowLayout</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>flow</string>
 	<key>uuid</key>

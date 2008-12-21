@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+%x{'#{ENV['TM_BUNDLE_SUPPORT']}/sc3ctrl/sc3ctrl' #{$*.join(" ")}}

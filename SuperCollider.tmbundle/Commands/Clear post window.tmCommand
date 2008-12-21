@@ -5,8 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>require_cmd sc3ctrl
-sc3ctrl -c</string>
+	<string>require_cmd sc3c
+sc3c -c</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
@@ -15,6 +15,8 @@ sc3ctrl -c</string>
 	<string>Clear post window</string>
 	<key>output</key>
 	<string>discard</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>uuid</key>
 	<string>264ACF44-52AC-4AD4-8C13-0F49E0DAAA12</string>
 </dict>

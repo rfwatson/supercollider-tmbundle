@@ -8,6 +8,8 @@
 }.play(s);</string>
 	<key>name</key>
 	<string>Create SynthDef</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>sdef</string>
 	<key>uuid</key>

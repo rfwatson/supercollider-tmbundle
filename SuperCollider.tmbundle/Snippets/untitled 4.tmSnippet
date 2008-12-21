@@ -6,6 +6,8 @@
 	<string>.openCodeFile</string>
 	<key>name</key>
 	<string>.openCodeFile</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>.c</string>
 	<key>uuid</key>

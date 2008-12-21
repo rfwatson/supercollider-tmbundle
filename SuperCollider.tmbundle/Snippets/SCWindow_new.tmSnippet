@@ -6,6 +6,8 @@
 	<string>SCWindow("${1:window title}", Rect(${2:x}, ${3:y}, ${4:width}, ${5:height}));</string>
 	<key>name</key>
 	<string>SCWindow.new</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>win</string>
 	<key>uuid</key>

@@ -6,6 +6,8 @@
 	<string>Server.killAll; Server.default.boot</string>
 	<key>name</key>
 	<string>Server.killAll</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
 	<string>sk</string>
 	<key>uuid</key>
