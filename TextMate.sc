@@ -4,14 +4,9 @@ SC3Controller {
   classvar nodes;
 
   *initClass {
-    var postToFront;
     nodes = List[];
         
-    Platform.case(\osx) {
-      postToFront = {
-        Document.listener.front;
-      };
-      
+    Platform.case(\osx) {      
       StartUp.add {
         this.addListeners;
       }
@@ -19,7 +14,12 @@ SC3Controller {
   }
 
   *addListeners {
-    var node;
+    var node, postToFront;
+    
+    postToFront = {
+      Document.listener.front;
+    };
+    
     if(nodes.isEmpty) {
       node = OSCresponderNode(nil, '/sc3ctrl/cmd') { |t, r, msg|
         msg[1].asString.interpretPrint;
