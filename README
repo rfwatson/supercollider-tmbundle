@@ -43,7 +43,7 @@ Installation
 
 2) Copy TextMate.sc to SuperCollider Extensions directory and relaunch SC.
 
-3) Open .sc document, commands should now work as long as both SC and TM are open..
+3) With .sc document open in TextMate, commands should now work as long as both SC and TM are open..
 
 
 Notes
