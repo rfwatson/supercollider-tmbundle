@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Synth(\\${1:foobar}, [\\${2:arg}, ${3:value}]);</string>
+	<key>name</key>
+	<string>Create Synth</string>
+	<key>tabTrigger</key>
+	<string>syn</string>
+	<key>uuid</key>
+	<string>5C56B0A4-BC6D-4A15-8876-BF43BE54AC63</string>
+</dict>
+</plist>

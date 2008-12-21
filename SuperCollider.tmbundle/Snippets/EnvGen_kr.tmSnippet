@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>EnvGen.kr(${1:env}, doneAction: ${2:2})</string>
+	<key>name</key>
+	<string>EnvGen.kr</string>
+	<key>tabTrigger</key>
+	<string>egen</string>
+	<key>uuid</key>
+	<string>F70E5246-BA0F-4201-8C63-09D8CE38A690</string>
+</dict>
+</plist>

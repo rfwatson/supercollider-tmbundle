@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>require_cmd sc3ctrl
+sc3ctrl -d $TM_SELECTED_TEXT
+</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@d</string>
+	<key>name</key>
+	<string>Help</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>EAC732CB-6B38-4E0A-9BD4-D377562331D9</string>
+</dict>
+</plist>

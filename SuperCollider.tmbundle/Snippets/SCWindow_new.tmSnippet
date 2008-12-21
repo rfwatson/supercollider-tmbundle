@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>SCWindow("${1:window title}", Rect(${2:x}, ${3:y}, ${4:width}, ${5:height}));</string>
+	<key>name</key>
+	<string>SCWindow.new</string>
+	<key>tabTrigger</key>
+	<string>win</string>
+	<key>uuid</key>
+	<string>C5F4C24C-AFE2-4B63-A925-7DA638E8BE1A</string>
+</dict>
+</plist>

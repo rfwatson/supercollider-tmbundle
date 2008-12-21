@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>require_cmd sc3ctrl
+sc3ctrl -k</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@k</string>
+	<key>name</key>
+	<string>Recompile class library</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>0EE79AEB-E9A7-4ABE-98A0-6CDBF3F3777A</string>
+</dict>
+</plist>

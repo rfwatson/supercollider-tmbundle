@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Buffer.read(${1:s}, "${2:sounds/Amen.wav}");</string>
+	<key>name</key>
+	<string>Buffer.read</string>
+	<key>tabTrigger</key>
+	<string>buf</string>
+	<key>uuid</key>
+	<string>7BF22058-5A13-443D-9809-BD68A75EAFB3</string>
+</dict>
+</plist>

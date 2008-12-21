@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>w.view.decorator = FlowLayout(w.view.bounds);</string>
+	<key>name</key>
+	<string>FlowLayout</string>
+	<key>tabTrigger</key>
+	<string>flow</string>
+	<key>uuid</key>
+	<string>2C468C9B-66BB-40C6-B845-E2360D4717B4</string>
+</dict>
+</plist>

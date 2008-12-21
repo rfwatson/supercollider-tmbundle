@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Server.killAll; Server.default.boot</string>
+	<key>name</key>
+	<string>Server.killAll</string>
+	<key>tabTrigger</key>
+	<string>sk</string>
+	<key>uuid</key>
+	<string>C0B1536B-6B8C-4803-A81C-542575112AEA</string>
+</dict>
+</plist>
