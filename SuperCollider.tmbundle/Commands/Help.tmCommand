@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>require_cmd sc3c
-sc3c -d $TM_SELECTED_TEXT</string>
+sc3c -d "${TM_SELECTED_TEXT:-\"\"}"</string>
 	<key>fallbackInput</key>
 	<string>word</string>
 	<key>input</key>
