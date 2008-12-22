@@ -26,6 +26,7 @@ h2. Key controls
 * CMD-ALT-CTRL-S  - Switch to SuperCollider mode
 
 
+
 Plus various snippets - check the bundle.
 
 
@@ -39,12 +40,13 @@ h2. Installation
 h2. Notes
 
 I've extracted the underlying code to allow control of SC.app from any command line application.
+
 "sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
 
 
 h2. Disclaimer
 
-This is a new implementation and still as yet not properly tested
+This is a new implementation and still as yet not properly tested<br/>
 Feedback and bug reports are welcome
 
 
