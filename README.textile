@@ -2,6 +2,7 @@ h1. "textmate-supercollider":http://github.com/rfwatson/textmate-supercollider
 
 A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":http://www.macromates.com.
 
+!http://farm4.static.flickr.com/3214/3005708965_4b6122cc66.jpg!:http://farm4.static.flickr.com/3214/3005708965_4b6122cc66_b.jpg
 
 h2. Key controls
 
