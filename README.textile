@@ -6,14 +6,23 @@ A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":htt
 h2. Key controls
 
 * ENTER           - Execute current selection/line
+
 * CTRL-.          - Stop server
+
 * CMD-k           - recompile class library
+
 * CMD-d           - Help
+
 * CMD-j           - Open class definition
+
 * CMD-y           - Implementations of
+
 * CMD-Y           - References to
+
 * CMD-?           - Post window to front
+
 * CMD-SHIFT-C     - Clear post window
+
 * CMD-ALT-CTRL-S  - Switch to SuperCollider mode
 
 
