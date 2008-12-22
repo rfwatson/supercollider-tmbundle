@@ -42,7 +42,7 @@ Switch to SuperCollider mode
 h2. Installation
 
 # Double click on SuperCollider.tmbundle.
-# Copy TextMate.sc to SuperCollider Extensions directory and relaunch SC.
+# Copy TextMate.sc to SuperCollider class load path, eg  @~/Application\ Support/SuperCollider/Extensions/@. Relaunch SC.
 # With .sc document open in TextMate, commands should now work as long as both SC and TM are open..
 
 
