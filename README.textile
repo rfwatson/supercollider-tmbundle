@@ -1,0 +1,44 @@
+h1. "textmate-supercollider":http://github.com/rfwatson/textmate-supercollider
+
+A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":http://www.macromates.com.
+
+
+h2. Key controls
+
+* ENTER           - Execute current selection/line
+* CTRL-.          - Stop server
+* CMD-k           - recompile class library
+* CMD-d           - Help
+* CMD-j           - Open class definition
+* CMD-y           - Implementations of
+* CMD-Y           - References to
+* CMD-?           - Post window to front
+* CMD-SHIFT-C     - Clear post window
+* CMD-ALT-CTRL-S  - Switch to SuperCollider mode
+
+
+Plus various snippets - check the bundle.
+
+
+h2. Installation
+
+# Double click on SuperCollider.tmbundle.
+# Copy TextMate.sc to SuperCollider Extensions directory and relaunch SC.
+# With .sc document open in TextMate, commands should now work as long as both SC and TM are open..
+
+
+h2. Notes
+
+I've extracted the underlying code to allow control of SC.app from any command line application.
+"sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
+
+
+h2. Disclaimer
+
+This is a new implementation and still as yet not properly tested
+Feedback and bug reports are welcome
+
+
+h2. Contact me
+
+Via github
