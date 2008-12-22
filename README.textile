@@ -5,28 +5,37 @@ A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":htt
 
 h2. Key controls
 
-* ENTER           - Execute current selection/line
+* @ENTER@<br/>Execute current selection/line
 
-* CTRL-.          - Stop server
+* @CTRL-PERIOD@<br/>
+Stop server
 
-* CMD-k           - recompile class library
+* @CMD-k@<br/>
+recompile class library
 
-* CMD-d           - Help
+* @CMD-d@<br/>
+Help
 
-* CMD-j           - Open class definition
+* @CMD-j@<br/>
+Open class definition
 
-* CMD-y           - Implementations of
+* @CMD-y@<br/>
+Implementations of
 
-* CMD-Y           - References to
+* @CMD-Y@<br/>
+References to
 
-* CMD-?           - Post window to front
+* @CMD-?@<br/>
+Post window to front
 
-* CMD-SHIFT-C     - Clear post window
+* @CMD-SHIFT-C@<br/>
+Clear post window
 
-* CMD-ALT-CTRL-S  - Switch to SuperCollider mode
+* @CMD-ALT-CTRL-S@<br/>
+Switch to SuperCollider mode
 
 <br/>
-Plus various snippets - check the bundle.
+*plus* various snippets - check the bundle.
 
 
 h2. Installation
@@ -44,9 +53,8 @@ I've extracted the underlying code to allow control of SC.app from any command l
 h2. Disclaimer
 
 This is a new implementation and still as yet not properly tested<br/>
-Feedback and bug reports are welcome
 
 
 h2. Contact me
 
-Via github
+Via "github":http://github.com/rwatson
