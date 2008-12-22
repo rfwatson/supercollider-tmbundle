@@ -25,8 +25,7 @@ h2. Key controls
 
 * CMD-ALT-CTRL-S  - Switch to SuperCollider mode
 
-
-
+<br/>
 Plus various snippets - check the bundle.
 
 
@@ -39,9 +38,7 @@ h2. Installation
 
 h2. Notes
 
-I've extracted the underlying code to allow control of SC.app from any command line application.
-
-"sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
+I've extracted the underlying code to allow control of SC.app from any command line application.<br/>"sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
 
 
 h2. Disclaimer
