@@ -1,5 +1,5 @@
 TextMate {
-  classvar menu, <openClassInTextMate;
+  classvar menu, <openClassInTextMate, <openReferencesInTextMate;
   
   *initClass {
     var opt;
@@ -19,6 +19,12 @@ TextMate {
     };
     openClassInTextMate.state = true;
     openClassInTextMate.setShortCut("j", true, true);
+    
+    openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
+      item.state = item.state.not;
+    };
+    openReferencesInTextMate.state = true;
+    openReferencesInTextMate.setShortCut("r", true, true);    
   }
 }
 
@@ -54,7 +60,9 @@ SC3Controller {
       nodes.add(node);
     
       node = OSCresponderNode(nil, '/sc3ctrl/help') { |t, r, msg|
-        { msg[1].asString.openHelpFile }.defer
+        { 
+          msg[1].asString.openHelpFile;
+        }.defer
       }.add;
       nodes.add(node);
    
@@ -88,12 +96,20 @@ SC3Controller {
       nodes.add(node);
 
       node = OSCresponderNode(nil, '/sc3ctrl/implementations') { |t, r, msg|
-        { SC3Controller.methodTemplates(msg[1]) }.defer
+        if(TextMate.openReferencesInTextMate.state) {
+          { SC3Controller.methodTemplates(msg[1], true) }.defer
+        } { // open in SC.app
+          { SC3Controller.methodTemplates(msg[1], false) }.defer
+        }      
       }.add;
       nodes.add(node);       
     
       node = OSCresponderNode(nil, '/sc3ctrl/references') { |t, r, msg|
-        { SC3Controller.methodReferences(msg[1]) }.defer
+        if(TextMate.openReferencesInTextMate.state) {
+          { SC3Controller.methodReferences(msg[1], true) }.defer          
+        } { // open in SC.app
+          { SC3Controller.methodReferences(msg[1], false) }.defer
+        }
       }.add;
       nodes.add(node);
 
@@ -130,7 +146,7 @@ SC3Controller {
   }
 
   // adapated from Kernel.sc
-	*methodTemplates { |name|
+	*methodTemplates { |name, openInTextMate=false|
 		var out, found = 0, namestring;
 		out = CollStream.new;
 		out << "Implementations of '" << name << "' :\n";
@@ -168,12 +184,20 @@ SC3Controller {
 			Post << "\nNo implementations of '" << name << "'.\n";
 		}
 		{
-			out.collection.newTextWindow(name.asString);
+		  if(openInTextMate) {
+		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
+		    File.use(fname, "w") { |f|
+		      f << out.collection.asString;
+		      ("mate" + fname).unixCmd;
+		    };
+		  } {
+			  out.collection.newTextWindow(name.asString);
+		  };
 		};
 	}
 
   // adapted from Kernel.sc
-	*methodReferences { |name|
+	*methodReferences { |name, openInTextMate|
 		var out, references;
 		name = name.asSymbol;
 		out = CollStream.new;
@@ -182,7 +206,16 @@ SC3Controller {
 		if (references.notNil, {
 			out << "References to '" << name << "' :\n";
 			references.do({ arg ref; out << "   " << ref.asString << "\n"; });
-			out.collection.newTextWindow(name.asString);
+
+		  if(openInTextMate) {
+		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
+		    File.use(fname, "w") { |f|
+		      f << out.collection.asString;
+		      ("mate" + fname).unixCmd;
+		    };
+		  } {
+			  out.collection.newTextWindow(name.asString);
+		  };
 		},{
 			Post << "\nNo references to '" << name << "'.\n";
 		});
