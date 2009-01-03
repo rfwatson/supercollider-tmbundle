@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>saveActiveFile</string>
+	<string>nop</string>
 	<key>command</key>
 	<string>require_cmd sc3c
 sc3c -k</string>
@@ -14,7 +14,7 @@ sc3c -k</string>
 	<key>name</key>
 	<string>Recompile class library</string>
 	<key>output</key>
-	<string>discard</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>uuid</key>

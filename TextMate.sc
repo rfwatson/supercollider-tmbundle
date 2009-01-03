@@ -1,5 +1,28 @@
-// http://github.com/rfwatson/sc3ctrl
+TextMate {
+  classvar menu, <openClassInTextMate;
+  
+  *initClass {
+    var opt;
+        
+    menu = CocoaMenuItem(nil, 7, "TextMate", true);
 
+    opt = CocoaMenuItem(menu, 0, "TextMate to front", false) {
+      "osascript << END
+      tell application \"TextMate\" to activate
+      END
+      ".unixCmd(postOutput: false)
+    };
+    opt.setShortCut("T");
+
+    openClassInTextMate = CocoaMenuItem(menu, 1, "Open class files in TextMate", false) { |item|
+      item.state = item.state.not;
+    };
+    openClassInTextMate.state = true;
+    openClassInTextMate.setShortCut("j", true, true);
+  }
+}
+
+// http://github.com/rfwatson/sc3ctrl
 SC3Controller {
   classvar nodes;
 
@@ -35,7 +58,31 @@ SC3Controller {
       nodes.add(node);
    
       node = OSCresponderNode(nil, '/sc3ctrl/class') { |t, r, msg|
-        { msg[1].asString.interpret.openCodeFile }.defer
+        // TM version only
+        var klass = msg[1].asString;
+        var allClasses = Class.allClasses.collect(_.asString);
+        
+        { 
+          if(TextMate.openClassInTextMate.state) {
+            if(allClasses.detect{ |str| str == klass }.notNil) { // .includes doesn't work?
+              var fname = klass.interpret.filenameSymbol;
+              var cmd = "grep -nh \"^" ++ klass ++ "\" \"" ++ fname ++ "\" > /tmp/grepout.tmp";
+              cmd.unixCmd(postOutput: false, action: { 
+                File.use("/tmp/grepout.tmp", "r") { |f|
+                  var content = f.readAllString;
+                  var split = content.split($:);
+                  if("^[0-9]+$".matchRegexp(split.first.asString)) {
+                   ("mate -l" ++ split.first + "\"" ++ fname ++ "\"").postln.unixCmd(postOutput: false);
+                  } {
+                   ("mate" + fname).unixCmd(postOutput: false);
+                  }
+                };
+              });
+            }
+          } { // open in SC.app
+            klass.interpret.openCodeFile;
+          };
+        }.defer
       }.add;
       nodes.add(node);
 
@@ -48,7 +95,7 @@ SC3Controller {
         { SC3Controller.methodReferences(msg[1]) }.defer
       }.add;
       nodes.add(node);
-    
+
       node = OSCresponderNode(nil, '/sc3ctrl/stop') { |t, r, msg|
         thisProcess.stop; nil;
       }.add;
