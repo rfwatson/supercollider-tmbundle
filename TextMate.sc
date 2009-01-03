@@ -46,9 +46,10 @@ SC3Controller {
     if(nodes.isEmpty) {
       node = OSCresponderNode(nil, '/sc3ctrl/cmd') { |t, r, msg|
         {
+          thisThread.clock = SystemClock;
           msg[1].asString.interpretPrint;
           postToFront.();
-        }.defer;
+        }.defer
       }.add;
       nodes.add(node);
     
