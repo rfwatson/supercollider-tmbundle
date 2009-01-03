@@ -24,7 +24,7 @@ TextMate {
       item.state = item.state.not;
     };
     openReferencesInTextMate.state = true;
-    openReferencesInTextMate.setShortCut("r", true, true);    
+    openReferencesInTextMate.setShortCut("r", true, true);
   }
 }
 
@@ -81,7 +81,7 @@ SC3Controller {
                   var content = f.readAllString;
                   var split = content.split($:);
                   if("^[0-9]+$".matchRegexp(split.first.asString)) {
-                   ("mate -l" ++ split.first + "\"" ++ fname ++ "\"").postln.unixCmd(postOutput: false);
+                   ("mate -l" ++ split.first + "\"" ++ fname ++ "\"").unixCmd(postOutput: false);
                   } {
                    ("mate" + fname).unixCmd(postOutput: false);
                   }

@@ -8,15 +8,15 @@
 	<string>require_cmd sc3c
 sc3c -y $TM_SELECTED_TEXT</string>
 	<key>fallbackInput</key>
-	<string>word</string>
+	<string>none</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>none</string>
 	<key>keyEquivalent</key>
 	<string>@y</string>
 	<key>name</key>
 	<string>Implementations of</string>
 	<key>output</key>
-	<string>discard</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>uuid</key>

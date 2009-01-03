@@ -14,7 +14,7 @@ sc3c -k</string>
 	<key>name</key>
 	<string>Recompile class library</string>
 	<key>output</key>
-	<string>showAsTooltip</string>
+	<string>discard</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>uuid</key>

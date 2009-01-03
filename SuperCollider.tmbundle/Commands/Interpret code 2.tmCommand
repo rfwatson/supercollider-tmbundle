@@ -11,7 +11,7 @@ sc3c -x SC_INTERPRET_TEXT;</string>
 	<key>fallbackInput</key>
 	<string>line</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>none</string>
 	<key>keyEquivalent</key>
 	<string></string>
 	<key>name</key>
