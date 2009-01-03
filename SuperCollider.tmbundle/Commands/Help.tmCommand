@@ -7,7 +7,9 @@
 	<key>command</key>
 	<string>require_cmd sc3c
 sc3c -d "${TM_SELECTED_TEXT:-\"\"}"
-
+osascript &lt;&lt; END
+tell application "SuperCollider" to activate
+END
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>
