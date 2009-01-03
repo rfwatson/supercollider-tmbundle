@@ -188,7 +188,7 @@ SC3Controller {
 		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
-		      ("mate" + fname).unixCmd;
+		      ("mate" + fname).unixCmd(postOutput: false);
 		    };
 		  } {
 			  out.collection.newTextWindow(name.asString);
@@ -211,7 +211,7 @@ SC3Controller {
 		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
-		      ("mate" + fname).unixCmd;
+		      ("mate" + fname).unixCmd(postOutput: false);
 		    };
 		  } {
 			  out.collection.newTextWindow(name.asString);
