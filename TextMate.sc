@@ -83,7 +83,7 @@ SC3Controller {
                   if("^[0-9]+$".matchRegexp(split.first.asString)) {
                    ("mate -l" ++ split.first + "\"" ++ fname ++ "\"").unixCmd(postOutput: false);
                   } {
-                   ("mate" + fname).unixCmd(postOutput: false);
+                   ("mate -l1 \"" ++ fname ++ "\"").unixCmd(postOutput: false);
                   }
                 };
               });
@@ -97,18 +97,18 @@ SC3Controller {
 
       node = OSCresponderNode(nil, '/sc3ctrl/implementations') { |t, r, msg|
         if(TextMate.openReferencesInTextMate.state) {
-          { SC3Controller.methodTemplates(msg[1], true) }.defer
+          { this.methodTemplates(msg[1], true) }.defer
         } { // open in SC.app
-          { SC3Controller.methodTemplates(msg[1], false) }.defer
+          { this.methodTemplates(msg[1], false) }.defer
         }      
       }.add;
       nodes.add(node);       
     
       node = OSCresponderNode(nil, '/sc3ctrl/references') { |t, r, msg|
         if(TextMate.openReferencesInTextMate.state) {
-          { SC3Controller.methodReferences(msg[1], true) }.defer          
+          { this.methodReferences(msg[1], true) }.defer          
         } { // open in SC.app
-          { SC3Controller.methodReferences(msg[1], false) }.defer
+          { this.methodReferences(msg[1], false) }.defer
         }
       }.add;
       nodes.add(node);
