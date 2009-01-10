@@ -18,17 +18,15 @@ TextMate {
       item.state = item.state.not;
     };
     openClassInTextMate.state = true;
-    openClassInTextMate.setShortCut("j", true, true);
     
     openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
       item.state = item.state.not;
     };
     openReferencesInTextMate.state = true;
-    openReferencesInTextMate.setShortCut("r", true, true);
   }
 }
 
-// http://github.com/rfwatson/sc3ctrl
+// adapted from http://github.com/rfwatson/sc3ctrl
 SC3Controller {
   classvar nodes;
 
@@ -68,14 +66,15 @@ SC3Controller {
    
       node = OSCresponderNode(nil, '/sc3ctrl/class') { |t, r, msg|
         // TM version only
+        var fname, cmd;
         var klass = msg[1].asString;
         var allClasses = Class.allClasses.collect(_.asString);
         
         { 
           if(TextMate.openClassInTextMate.state) {
             if(allClasses.detect{ |str| str == klass }.notNil) { // .includes doesn't work?
-              var fname = klass.interpret.filenameSymbol;
-              var cmd = "grep -nh \"^" ++ klass ++ "\" \"" ++ fname ++ "\" > /tmp/grepout.tmp";
+              fname = klass.interpret.filenameSymbol;
+              cmd = "grep -nh \"^" ++ klass ++ "\" \"" ++ fname ++ "\" > /tmp/grepout.tmp";
               cmd.unixCmd(postOutput: false, action: { 
                 File.use("/tmp/grepout.tmp", "r") { |f|
                   var content = f.readAllString;
@@ -147,7 +146,7 @@ SC3Controller {
 
   // adapated from Kernel.sc
 	*methodTemplates { |name, openInTextMate=false|
-		var out, found = 0, namestring;
+		var out, found = 0, namestring, fname;
 		out = CollStream.new;
 		out << "Implementations of '" << name << "' :\n";
 		Class.allClasses.do({ arg class;
@@ -185,7 +184,7 @@ SC3Controller {
 		}
 		{
 		  if(openInTextMate) {
-		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
+		    fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
 		      ("mate" + fname).unixCmd(postOutput: false);
@@ -198,7 +197,7 @@ SC3Controller {
 
   // adapted from Kernel.sc
 	*methodReferences { |name, openInTextMate|
-		var out, references;
+		var out, references, fname;
 		name = name.asSymbol;
 		out = CollStream.new;
 		references = Class.findAllReferences(name);
@@ -208,7 +207,7 @@ SC3Controller {
 			references.do({ arg ref; out << "   " << ref.asString << "\n"; });
 
 		  if(openInTextMate) {
-		    var fname = "/tmp/" ++ Date.seed ++ ".sc";
+		    fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
 		      ("mate" + fname).unixCmd(postOutput: false);
