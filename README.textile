@@ -6,6 +6,10 @@ A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":htt
 
 "Download most recent tarball":http://github.com/rfwatson/textmate-supercollider/tarball/master
 
+h2. Requirements
+
+A "recent build":http://sourceforge.net/projects/supercollider of SC (>= 3.3 alpha)
+
 h2. Key controls
 
 * @ENTER@<br/>Execute current selection/line
