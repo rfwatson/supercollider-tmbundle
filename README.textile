@@ -4,11 +4,33 @@ A "SuperCollider":http://supercollider.sourceforge.net bundle for "TextMate":htt
 
 !http://farm4.static.flickr.com/3214/3005708965_4b6122cc66.jpg!:http://farm4.static.flickr.com/3214/3005708965_4b6122cc66_b.jpg
 
-"Download most recent tarball":http://github.com/rfwatson/textmate-supercollider/tarball/master
-
 h2. Requirements
 
 A "recent build":http://sourceforge.net/projects/supercollider of SC (>= 3.3 alpha)
+
+h2. Installation
+
+h3. With git
+
+* @mkdir -p ~/Library/Application\ Support/TextMate/Bundles@
+* @cd ~/Library/Application\ Support/TextMate/Bundles@
+* @git clone git://github.com/rfwatson/supercollider-tmbundle.git "SuperCollider.tmbundle"@
+* @osascript -e 'tell app "TextMate" to reload bundles'@
+
+h3. Without git
+
+* @mkdir -p ~/Library/Application\ Support/TextMate/Bundles@
+* @cd ~/Library/Application\ Support/TextMate/Bundles@
+* @wget http://github.com/rfwatson/supercollider-tmbundle/tarball/master@
+* @tar zxf rfwatson-supercollider-tmbundle*.tar.gz@
+* @rm rfwatson-supercollider-tmbundle*.tar.gz@
+* @mv rfwatson-supercollider-tmbundle* SuperCollider.tmbundle@
+* @osascript -e 'tell app "TextMate" to reload bundles'@
+
+h3. After installing
+
+* Open TextMate and select 'SuperCollider' bundle
+* Press CMD-SHIFT-F1 to complete installation.
 
 h2. Key controls
 
@@ -44,23 +66,17 @@ Switch to SuperCollider mode
 <br/>
 *plus* various snippets - check the bundle.
 
+h2. Limitations
 
-h2. Installation
+TextMate does not handle .rtf documents. So .rtf files will have to be copy-and-pasted into .sc text files. This is not a problem for classes.
 
-# Double click on SuperCollider.tmbundle.
-# Copy TextMate.sc to SuperCollider class load path, eg  @~/Application\ Support/SuperCollider/Extensions/@. Relaunch SC.
-# With .sc document open in TextMate, commands should now work as long as both SC and TM are open..
+CMD-period cannot be programmed in TextMate, so to stop audio output use CTRL-period instead
 
+Class lib can only currently be recompiled from within TextMate (CMD-K) if there's been no previous error compiling it. Recompile from within SC in that case
 
 h2. Notes
 
 I've extracted the underlying code to allow control of SC.app from any command line application.<br/>"sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
-
-
-h2. Disclaimer
-
-This is a new implementation and still as yet not properly tested<br/>
-
 
 h2. Contact me
 
