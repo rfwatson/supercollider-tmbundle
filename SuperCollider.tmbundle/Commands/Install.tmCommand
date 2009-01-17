@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+def could_not_locate
+	puts "&lt;span style='color:red'&gt;There was a problem&lt;/span&gt;&lt;br/&gt;"
+	puts "Probably, you do not have SuperCollider installed, or you are using a non-standard user support directory.&lt;br/&gt;&lt;br/&gt;"
+	puts "You will need to manually copy &lt;code&gt;supercollider-tmbundle/Support/classes/TextMate.sc&lt;/code&gt; into your SC class path"
+end
+
+puts "=======================================&lt;br/&gt;"
+puts "Textmate SuperCollider bundle&lt;br/&gt;"
+puts "by &lt;a href='http://rfwatson.github.com'&gt;R.Watson&lt;/a&gt;.&lt;br/&gt;"
+puts "=======================================&lt;br/&gt;&lt;br/&gt;"
+
+if File.exists?(File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc"))
+	puts "&lt;span style='color:green'&gt;SuperCollider bundle already installed&lt;/span&gt;.&lt;br/&gt;"
+else
+	if not File.directory?(File.expand_path("~/Library/Application Support/SuperCollider/Extensions"))
+		could_not_locate
+	else
+		if system %Q{ln -s '#{ENV['TM_BUNDLE_SUPPORT']}/classes/TextMate.sc' '#{File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc")}'}
+			puts "&lt;span style='color:green'&gt;Successfully installed TextMate class&lt;/span&gt;.&lt;br/&gt;&lt;br/&gt;"
+			puts "Relaunch SuperCollider to complete installation."
+		else
+			puts "There was an error installing the class file.&lt;br/&gt;&lt;br/&gt;"
+			could_not_locate
+		end
+	end
+end
+</string>
+	<key>fallbackInput</key>
+	<string>document</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>$@</string>
+	<key>name</key>
+	<string>Install</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
+	<key>uuid</key>
+	<string>BB37ACE9-8262-4AF6-B3C6-43DC0AF2B370</string>
+</dict>
+</plist>

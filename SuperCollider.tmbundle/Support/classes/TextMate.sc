@@ -1,8 +1,17 @@
 TextMate {
   classvar menu, <openClassInTextMate, <openReferencesInTextMate;
   
+  *saveState {
+    (
+      classfiles: openClassInTextMate.state, 
+      references: openReferencesInTextMate.state
+    ).writeArchive("%/.textmate-settings".format(Platform.userAppSupportDir));
+  }
+
   *initClass {
     var opt;
+
+    var settings = Object.readArchive("%/.textmate-settings".format(Platform.userAppSupportDir));
     
     try {
       menu = CocoaMenuItem(nil, 7, "TextMate", true);
@@ -17,13 +26,24 @@ TextMate {
 
       openClassInTextMate = CocoaMenuItem(menu, 1, "Open class files in TextMate", false) { |item|
         item.state = item.state.not;
+        this.saveState;
       };
-      openClassInTextMate.state = true;
+      openClassInTextMate.state = settings.classfiles;
     
       openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
         item.state = item.state.not;
+        this.saveState;
       };
-      openReferencesInTextMate.state = true;      
+      openReferencesInTextMate.state = settings.references;      
+      
+      CocoaMenuItem(menu, 3, "About SuperCollider bundle", false) { |item|
+        Document.new.string = "TextMate-SuperCollider bundle
+
+by R.Watson
+        
+For documentation and source code,
+http://rfwatson.github.com"
+      };
     } {
       "TextMate found a problem installing CocoaMenuItems - you may be running SC 3.2 or older, or booting from command-line.".warn
     }
