@@ -3,26 +3,30 @@ TextMate {
   
   *initClass {
     var opt;
-        
-    menu = CocoaMenuItem(nil, 7, "TextMate", true);
-
-    opt = CocoaMenuItem(menu, 0, "TextMate to front", false) {
-      "osascript << END
-      tell application \"TextMate\" to activate
-      END
-      ".unixCmd(postOutput: false)
-    };
-    opt.setShortCut("T");
-
-    openClassInTextMate = CocoaMenuItem(menu, 1, "Open class files in TextMate", false) { |item|
-      item.state = item.state.not;
-    };
-    openClassInTextMate.state = true;
     
-    openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
-      item.state = item.state.not;
-    };
-    openReferencesInTextMate.state = true;
+    try {
+      menu = CocoaMenuItem(nil, 7, "TextMate", true);
+
+      opt = CocoaMenuItem(menu, 0, "TextMate to front", false) {
+        "osascript << END
+        tell application \"TextMate\" to activate
+        END
+        ".unixCmd(postOutput: false)
+      };
+      opt.setShortCut("T");
+
+      openClassInTextMate = CocoaMenuItem(menu, 1, "Open class files in TextMate", false) { |item|
+        item.state = item.state.not;
+      };
+      openClassInTextMate.state = true;
+    
+      openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
+        item.state = item.state.not;
+      };
+      openReferencesInTextMate.state = true;      
+    } {
+      "TextMate found a problem installing CocoaMenuItems - you may be running SC 3.2 or older, or booting from command-line.".warn
+    }
   }
 }
 
