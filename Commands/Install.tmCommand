@@ -18,21 +18,24 @@ puts "Textmate SuperCollider bundle&lt;br/&gt;"
 puts "by &lt;a href='http://rfwatson.github.com'&gt;R.Watson&lt;/a&gt;.&lt;br/&gt;"
 puts "=======================================&lt;br/&gt;&lt;br/&gt;"
 
-if File.exists?(File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc"))
-	puts "&lt;span style='color:green'&gt;SuperCollider bundle already installed&lt;/span&gt;.&lt;br/&gt;"
+fname = File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc")
+if File.exists?(fname)
+	#puts "&lt;span style='color:green'&gt;SuperCollider bundle already installed&lt;/span&gt;.&lt;br/&gt;"
+	File.rename(fname, fname + '.bak')
+end
+
+if not File.directory?(File.expand_path("~/Library/Application Support/SuperCollider/Extensions"))
+	could_not_locate
 else
-	if not File.directory?(File.expand_path("~/Library/Application Support/SuperCollider/Extensions"))
-		could_not_locate
+	if system %Q{ln -s '#{ENV['TM_BUNDLE_SUPPORT']}/classes/TextMate.sc' '#{File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc")}'}
+		puts "&lt;span style='color:green'&gt;Successfully installed TextMate class&lt;/span&gt;.&lt;br/&gt;&lt;br/&gt;"
+		puts "Relaunch SuperCollider to complete installation."
 	else
-		if system %Q{ln -s '#{ENV['TM_BUNDLE_SUPPORT']}/classes/TextMate.sc' '#{File.expand_path("~/Library/Application Support/SuperCollider/Extensions/TextMate.sc")}'}
-			puts "&lt;span style='color:green'&gt;Successfully installed TextMate class&lt;/span&gt;.&lt;br/&gt;&lt;br/&gt;"
-			puts "Relaunch SuperCollider to complete installation."
-		else
-			puts "There was an error installing the class file.&lt;br/&gt;&lt;br/&gt;"
-			could_not_locate
-		end
+		puts "There was an error installing the class file.&lt;br/&gt;&lt;br/&gt;"
+		could_not_locate
 	end
 end
+
 </string>
 	<key>fallbackInput</key>
 	<string>document</string>
