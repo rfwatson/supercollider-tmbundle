@@ -10,8 +10,17 @@ TextMate {
 
   *initClass {
     var opt;
+    var settings;
+    var setpath = "%/.textmate-settings".format(Platform.userAppSupportDir);
 
-    var settings = Object.readArchive("%/.textmate-settings".format(Platform.userAppSupportDir));
+    if(File.exists(setpath)) {
+      settings = Object.readArchive(setpath);
+    } {
+      settings = (
+        classfiles: true,
+        references: true
+      )
+    };
     
     try {
       menu = CocoaMenuItem(nil, 7, "TextMate", true);
