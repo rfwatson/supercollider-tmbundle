@@ -10,7 +10,7 @@
 def could_not_locate
 	puts "&lt;span style='color:red'&gt;There was a problem&lt;/span&gt;&lt;br/&gt;"
 	puts "Probably, you do not have SuperCollider installed, or you are using a non-standard user support directory.&lt;br/&gt;&lt;br/&gt;"
-	puts "You will need to manually copy &lt;code&gt;supercollider-tmbundle/Support/classes/TextMate.sc&lt;/code&gt; into your SC class path"
+	puts "You will need to manually link &lt;code&gt;supercollider-tmbundle/Support/classes/TextMate.sc&lt;/code&gt; into your SC class path"
 end
 
 puts "=======================================&lt;br/&gt;"
@@ -44,7 +44,7 @@ end
 	<key>keyEquivalent</key>
 	<string>$@</string>
 	<key>name</key>
-	<string>Install</string>
+	<string>Complete installation</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>

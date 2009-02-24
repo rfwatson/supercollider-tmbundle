@@ -23,37 +23,40 @@ TextMate {
     };
     
     try {
-      menu = CocoaMenuItem(nil, 7, "TextMate", true);
+      menu = SCMenuGroup(nil, "TextMate", 7);
 
-      opt = CocoaMenuItem(menu, 0, "TextMate to front", false) {
-        "osascript << END
-        tell application \"TextMate\" to activate
-        END
-        ".unixCmd(postOutput: false)
-      };
-      opt.setShortCut("T");
-
-      openClassInTextMate = CocoaMenuItem(menu, 1, "Open class files in TextMate", false) { |item|
-        item.state = item.state.not;
-        this.saveState;
-      };
-      openClassInTextMate.state = settings.classfiles;
-    
-      openReferencesInTextMate = CocoaMenuItem(menu, 2, "Open references in TextMate", false) { |item|
-        item.state = item.state.not;
-        this.saveState;
-      };
-      openReferencesInTextMate.state = settings.references;      
+      opt = SCMenuItem(menu, "TextMate to front")
+        .action_{
+          "osascript << END
+          tell application \"TextMate\" to activate
+          END
+          ".unixCmd(postOutput: false)
+        }
+        .setShortCut("T");
       
-      CocoaMenuItem(menu, 3, "About SuperCollider bundle", false) { |item|
-        Document.new.string = "TextMate-SuperCollider bundle
+      SCMenuSeparator(menu);
 
-by R.Watson
+      openClassInTextMate = SCMenuItem(menu, "Open class files in TextMate")
+        .action_{ |item|
+          item.state = item.state.not;
+          this.saveState;
+        }
+        .state_(settings.classfiles);
+    
+      openReferencesInTextMate = SCMenuItem(menu, "Open references in TextMate") 
+        .action_{ |item|
+          item.state = item.state.not;
+          this.saveState;
+        }
+        .state_(settings.references);
         
-For documentation and source code,
-http://rfwatson.github.com"
-      };
-    } {
+      SCMenuSeparator(menu, 4);
+      
+      SCMenuItem(menu, "About SuperCollider bundle") 
+        .action_{ |item|
+          "open 'http://github.com/rfwatson/supercollider-tmbundle'".unixCmd(postOutput:false);
+        }
+    } { 
       "TextMate found a problem installing CocoaMenuItems - you may be running SC 3.2 or older, or booting from command-line.".warn
     }
   }

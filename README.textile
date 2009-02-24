@@ -8,6 +8,8 @@ h2. Requirements
 
 A "recent build":http://sourceforge.net/projects/supercollider of SC (>= 3.3 alpha)
 
+"TextMate":http://macromates.com, with terminal usage enabled (see Help -> Terminal Usage in TM menu)
+
 h2. Installation
 
 h3. With git
@@ -19,6 +21,10 @@ h3. With git
 @git clone git://github.com/rfwatson/supercollider-tmbundle.git "SuperCollider.tmbundle"@
 
 @osascript -e 'tell app "TextMate" to reload bundles'@
+
+In Textmate menu: Bundles > SuperCollider > Complete installation
+
+
 
 h3. Without git
 
@@ -36,12 +42,12 @@ h3. Without git
 
 @osascript -e 'tell app "TextMate" to reload bundles'@
 
-h3. After installing
+In Textmate menu: Bundles > SuperCollider > Complete installation
 
-* Open TextMate and select 'SuperCollider' bundle
-* Press CMD-SHIFT-F1 to complete installation.
 
 h2. Key controls
+
+All key controls can be reprogrammed in Bundles editor.
 
 * @ENTER@<br/>Execute current selection/line
 
@@ -70,22 +76,24 @@ Post window to front
 Clear post window
 
 * @CMD-ALT-CTRL-S@<br/>
-Switch to SuperCollider mode
+Switch to SuperCollider bundle
 
 <br/>
 *plus* various snippets - check the bundle.
 
-h2. Limitations
+h2. Notes
 
 TextMate does not handle .rtf documents. So .rtf files will have to be copy-and-pasted into .sc text files. This is not a problem for classes.
 
+Some controls (browse class file, etc) depend upon TM terminal command (see Help -> Terminal Usage in TM menu)
+
 CMD-period cannot be programmed in TextMate, so to stop audio output use CTRL-period instead
 
-Class lib can only currently be recompiled from within TextMate (CMD-K) if there's been no previous error compiling it. Recompile from within SC in that case
-
-h2. Notes
-
 I've extracted the underlying code to allow control of SC.app from any command line application.<br/>"sc3ctrl on github":http://github.com/rfwatson/sc3ctrl
+
+h2. TODO
+
+Might repackage this as a quark .. ?
 
 h2. Contact me
 
