@@ -13,7 +13,7 @@
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>if</string>
+	<string>ife</string>
 	<key>uuid</key>
 	<string>C0F1C9B0-6393-4B2B-86B4-40010363DCDE</string>
 </dict>
