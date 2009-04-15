@@ -21,38 +21,38 @@ SC3Controller {
     };
     
     if(nodes.isEmpty) {
-      node = OSCresponderNode(nil, '/sc3ctrl/cmd') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/cmd') { |t, r, msg|
         msg[1].asString.interpretPrint;
         { postToFront.() }.defer;
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/help') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/help') { |t, r, msg|
         { msg[1].asString.openHelpFile }.defer
       }.add;
       nodes.add(node);
    
-      node = OSCresponderNode(nil, '/sc3ctrl/class') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/class') { |t, r, msg|
         { msg[1].asString.interpret.openCodeFile }.defer
       }.add;
       nodes.add(node);
 
-      node = OSCresponderNode(nil, '/sc3ctrl/implementations') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/implementations') { |t, r, msg|
         { SC3Controller.methodTemplates(msg[1]) }.defer
       }.add;
       nodes.add(node);       
     
-      node = OSCresponderNode(nil, '/sc3ctrl/references') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/references') { |t, r, msg|
         { SC3Controller.methodReferences(msg[1]) }.defer
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/stop') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/stop') { |t, r, msg|
         thisProcess.stop;
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/clear') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/clear') { |t, r, msg|
         { 
           Document.listener.string = ""; ""; 
           postToFront.();
@@ -60,12 +60,12 @@ SC3Controller {
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/postfront') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/postfront') { |t, r, msg|
         { postToFront.() }.defer;
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/recompile') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/recompile') { |t, r, msg|
         { 
           thisProcess.recompile;
           postToFront.();

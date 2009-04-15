@@ -67,7 +67,7 @@ SC3Controller {
   classvar nodes;
 
   *initClass {
-    nodes = List[];
+    nodes = List[];    
         
     Platform.case(\osx) {      
       StartUp.add {
@@ -84,7 +84,7 @@ SC3Controller {
     };
     
     if(nodes.isEmpty) {
-      node = OSCresponderNode(nil, '/sc3ctrl/cmd') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/cmd') { |t, r, msg|
         {
           thisThread.clock = SystemClock;
           msg[1].asString.interpretPrint;
@@ -92,15 +92,15 @@ SC3Controller {
         }.defer
       }.add;
       nodes.add(node);
-    
-      node = OSCresponderNode(nil, '/sc3ctrl/help') { |t, r, msg|
+
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/help') { |t, r, msg|
         { 
           msg[1].asString.openHelpFile;
         }.defer
       }.add;
       nodes.add(node);
    
-      node = OSCresponderNode(nil, '/sc3ctrl/class') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/class') { |t, r, msg|
         // TM version only
         var fname, cmd;
         var klass = msg[1].asString;
@@ -130,7 +130,7 @@ SC3Controller {
       }.add;
       nodes.add(node);
 
-      node = OSCresponderNode(nil, '/sc3ctrl/implementations') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/implementations') { |t, r, msg|
         if(TextMate.openReferencesInTextMate.state) {
           { this.methodTemplates(msg[1], true) }.defer
         } { // open in SC.app
@@ -139,7 +139,7 @@ SC3Controller {
       }.add;
       nodes.add(node);       
     
-      node = OSCresponderNode(nil, '/sc3ctrl/references') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/references') { |t, r, msg|
         if(TextMate.openReferencesInTextMate.state) {
           { this.methodReferences(msg[1], true) }.defer          
         } { // open in SC.app
@@ -148,12 +148,12 @@ SC3Controller {
       }.add;
       nodes.add(node);
 
-      node = OSCresponderNode(nil, '/sc3ctrl/stop') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/stop') { |t, r, msg|
         thisProcess.stop; nil;
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/clear') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/clear') { |t, r, msg|
         { 
           Document.listener.string = ""; ""; 
           postToFront.();
@@ -161,12 +161,12 @@ SC3Controller {
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/postfront') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/postfront') { |t, r, msg|
         { postToFront.() }.defer;
       }.add;
       nodes.add(node);
     
-      node = OSCresponderNode(nil, '/sc3ctrl/recompile') { |t, r, msg|
+      node = OSCresponderNode(NetAddr("localhost", nil), '/sc3ctrl/recompile') { |t, r, msg|
         { 
           thisProcess.recompile;
           postToFront.();
