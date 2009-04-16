@@ -3,20 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Classname} : ${2:Object} {
-	*new { $3
-		^super.new.init$4;
-	}
-
-	init { $5
-		$6
-	}
-}</string>
+	<string>.makeBundle(${1:0.2}, {
+	$2
+});</string>
 	<key>name</key>
-	<string>untitled</string>
+	<string>makeBundle</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>.mb</string>
 	<key>uuid</key>
-	<string>7581E1DB-6946-44BB-B836-6F5CE5E99B55</string>
+	<string>66B16E22-D3FB-464F-B820-2FEEFD79DBA5</string>
 </dict>
 </plist>
