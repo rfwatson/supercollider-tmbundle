@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Post &lt;&lt; "$TM_SELECTED_TEXT: " &lt;&lt;  $TM_SELECTED_TEXT &lt;&lt; "\n"; 
+</string>
+	<key>keyEquivalent</key>
+	<string>~@p</string>
+	<key>name</key>
+	<string>Print Variable</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
+	<key>uuid</key>
+	<string>C94CF802-251A-44FE-87CB-4C50FA4D4D02</string>
+</dict>
+</plist>
