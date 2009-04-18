@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>block {|break|
+	
+	if (${1:true}) { break.value(${2:nil}); 
+}
+</string>
+	<key>keyEquivalent</key>
+	<string>^~@b</string>
+	<key>name</key>
+	<string>Break</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
+	<key>tabTrigger</key>
+	<string>break</string>
+	<key>uuid</key>
+	<string>76D2572D-8E53-4EC8-93C0-2DFADF94E687</string>
+</dict>
+</plist>
