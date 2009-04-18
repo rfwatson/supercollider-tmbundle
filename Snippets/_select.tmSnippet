@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>.select({|${1:i}tem, $1| $2 })
+</string>
+	<key>name</key>
+	<string>.select</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
+	<key>tabTrigger</key>
+	<string>.select</string>
+	<key>uuid</key>
+	<string>A29A295B-A0A4-4E8E-B144-802098C5D806</string>
+</dict>
+</plist>

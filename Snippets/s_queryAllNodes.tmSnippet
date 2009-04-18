@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>s.queryAllNodes</string>
+	<key>name</key>
+	<string>s.queryAllNodes</string>
+	<key>scope</key>
+	<string>source.supercollider</string>
+	<key>tabTrigger</key>
+	<string>s.q</string>
+	<key>uuid</key>
+	<string>F0523CC5-90CA-49B5-82BA-4EF94A675767</string>
+</dict>
+</plist>
