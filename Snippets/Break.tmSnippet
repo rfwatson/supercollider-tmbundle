@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>block {|break|
 	
-	if (${1:true}) { break.value(${2:nil}); 
+	if (${1:true}) { break.value(${2:nil}) }; 
 }
 </string>
 	<key>keyEquivalent</key>
