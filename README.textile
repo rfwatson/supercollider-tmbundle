@@ -75,7 +75,7 @@ Post window to front
 * @CMD-SHIFT-C@<br/>
 Clear post window
 
-* @CMD-ALT-CTRL-S@<br/>
+* @ALT-CTRL-SHIFT-S@<br/>
 Switch to SuperCollider bundle
 
 <br/>
