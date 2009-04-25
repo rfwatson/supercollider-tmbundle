@@ -11,7 +11,7 @@
 	<key>foldingStopMarker</key>
 	<string>\}|\*\/</string>
 	<key>keyEquivalent</key>
-	<string>^~@s</string>
+	<string>^~S</string>
 	<key>name</key>
 	<string>SuperCollider</string>
 	<key>patterns</key>
