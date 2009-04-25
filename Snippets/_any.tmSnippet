@@ -3,22 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Classname} : ${2:Object} {
-	*new { $3
-		^super.new.init$4;
-	}
-
-	init { $5
-		$6
-	}
-}</string>
+	<string>.any { |${1:i}tem, $1|
+	$2
+};</string>
 	<key>name</key>
-	<string>Class</string>
+	<string>.any</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>.any</string>
 	<key>uuid</key>
-	<string>7581E1DB-6946-44BB-B836-6F5CE5E99B55</string>
+	<string>DF09CE07-5704-4932-8DC7-86A1ECE54401</string>
 </dict>
 </plist>

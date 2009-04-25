@@ -3,22 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Classname} : ${2:Object} {
-	*new { $3
-		^super.new.init$4;
-	}
-
-	init { $5
-		$6
-	}
-}</string>
+	<string>.collect({|${1:i}tem, $1| $2 })
+</string>
 	<key>name</key>
-	<string>Class</string>
+	<string>.collect</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>.collect</string>
 	<key>uuid</key>
-	<string>7581E1DB-6946-44BB-B836-6F5CE5E99B55</string>
+	<string>36B59028-5F9E-4023-B0CB-46BA991E4A0F</string>
 </dict>
 </plist>

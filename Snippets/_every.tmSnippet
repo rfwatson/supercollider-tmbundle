@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>every { |item, i|
-	$1
+	<string>every { |${1:i}tem, $1|
+	$2
 };</string>
 	<key>name</key>
-	<string>every ...</string>
+	<string>.every</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>every</string>
+	<string>.every</string>
 	<key>uuid</key>
 	<string>43EED273-EF78-473E-8BF0-650D2FC19CCA</string>
 </dict>

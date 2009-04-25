@@ -3,22 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Classname} : ${2:Object} {
-	*new { $3
-		^super.new.init$4;
-	}
-
-	init { $5
-		$6
-	}
-}</string>
+	<string>block {|break|
+	
+	if (${1:true}) { break.value(${2:nil}) }; 
+}
+</string>
+	<key>keyEquivalent</key>
+	<string>^~@b</string>
 	<key>name</key>
-	<string>Class</string>
+	<string>Break</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>break</string>
 	<key>uuid</key>
-	<string>7581E1DB-6946-44BB-B836-6F5CE5E99B55</string>
+	<string>76D2572D-8E53-4EC8-93C0-2DFADF94E687</string>
 </dict>
 </plist>

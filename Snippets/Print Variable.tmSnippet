@@ -3,22 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Classname} : ${2:Object} {
-	*new { $3
-		^super.new.init$4;
-	}
-
-	init { $5
-		$6
-	}
-}</string>
+	<string>Post &lt;&lt; "$TM_SELECTED_TEXT: " &lt;&lt;  $TM_SELECTED_TEXT &lt;&lt; "\n"; 
+</string>
+	<key>keyEquivalent</key>
+	<string>~@p</string>
 	<key>name</key>
-	<string>Class</string>
+	<string>Print Variable</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
-	<key>tabTrigger</key>
-	<string>class</string>
 	<key>uuid</key>
-	<string>7581E1DB-6946-44BB-B836-6F5CE5E99B55</string>
+	<string>C94CF802-251A-44FE-87CB-4C50FA4D4D02</string>
 </dict>
 </plist>

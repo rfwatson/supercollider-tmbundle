@@ -3,16 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>any { |item, i|
-	$1
-};</string>
+	<string>.select({|${1:i}tem, $1| $2 })
+</string>
 	<key>name</key>
-	<string>any ...</string>
+	<string>.select</string>
 	<key>scope</key>
 	<string>source.supercollider</string>
 	<key>tabTrigger</key>
-	<string>any</string>
+	<string>.select</string>
 	<key>uuid</key>
-	<string>DF09CE07-5704-4932-8DC7-86A1ECE54401</string>
+	<string>A29A295B-A0A4-4E8E-B144-802098C5D806</string>
 </dict>
 </plist>
