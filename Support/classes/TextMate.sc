@@ -64,12 +64,20 @@ TextMate {
 
 // adapted from http://github.com/rfwatson/sc3ctrl
 SC3Controller {
-  classvar nodes;
+  classvar nodes, <>matePath;
 
   *initClass {
     nodes = List[];    
         
-    Platform.case(\osx) {      
+    Platform.case(\osx) {
+      
+      var whichMate = "which mate".unixCmdGetStdOut;
+      if(whichMate.isEmpty){
+        matePath = "/usr/local/bin/mate";
+      } {
+        matePath = whichMate;
+      };
+      
       StartUp.add {
         this.addListeners;
       }
@@ -116,11 +124,14 @@ SC3Controller {
                   var content = f.readAllString;
                   var split = content.split($:);
                   if("^[0-9]+$".matchRegexp(split.first.asString)) {
-                   ("mate -l" ++ split.first + "\"" ++ fname ++ "\"").unixCmd(postOutput: false);
+                   (matePath ++ " -l"++ split.first + "\"" ++ fname ++ "\"").unixCmd(postOutput: false);
                   } {
-                   ("mate -l1 \"" ++ fname ++ "\"").unixCmd(postOutput: false);
-                  }
+                   (matePath ++ " -l1 \"" ++ fname ++ "\"").unixCmd(postOutput: false);
+                  };
+                  f.close;
                 };
+                
+                
               });
             }
           } { // open in SC.app
@@ -223,7 +234,7 @@ SC3Controller {
 		    fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
-		      ("mate" + fname).unixCmd(postOutput: false);
+		      (matePath + fname).unixCmd(postOutput: false);
 		    };
 		  } {
 			  out.collection.newTextWindow(name.asString);
@@ -246,7 +257,7 @@ SC3Controller {
 		    fname = "/tmp/" ++ Date.seed ++ ".sc";
 		    File.use(fname, "w") { |f|
 		      f << out.collection.asString;
-		      ("mate" + fname).unixCmd(postOutput: false);
+		      (matePath + fname).unixCmd(postOutput: false);
 		    };
 		  } {
 			  out.collection.newTextWindow(name.asString);
